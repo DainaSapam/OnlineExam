@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="./css/stylesheet.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet" type="text/css">
+<link rel="icon" href="./icon.png" type="image/x-icon">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
+<title>Login</title>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar"
+	data-offset="50">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!--<a class="navbar-brand" href="#myPage">Logo</a>-->
+				<img src="./logo.jpg" width="100" height="50">
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">SSKVK Singjamei</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<br>
+		<h1 class="text-center">Important instructions to the candidates.</h1>
+		<hr>
+		<ul>
+			<li>Please read the instructions below before you start the
+				test.</li>
+			<li>The duration of the test is of 1 hour after which it will
+				automatically end.</li>
+			<li>Extra 5 minutes is given for going through the instructions
+				and settling down.</li>
+			<li>Please keep a pen/pencil and a paper ready for doing rough
+				work.</li>
+			<li>All questions in this test needed to be attempted. You will
+				not be able to submit the test, otherwise.</li>
+			<li>There is no negative marking.</li>
+			<li>You will be able to review the answers and if required
+				change them before the final submission.</li>
+			<li>Your score sheet will be availabe instantly after you submit
+				the test.</li>
+			<li>Please fill up your <b>CenterID</b> and your <b>Name</b> to
+				start the test.
+			</li>
+			<li>Your test will start instantly after your click <b>SUBMIT</b>
+				button.
+			</li>
+		</ul>
+		<div class="panel panel-default">
+					<div class="panel-body">
+						<form id="examForm" method="post" class=" form-inline"
+							action="#">
+							<div class="form-group">
+								<label for="centerID" class="col-sm-4 control-label">Center ID:</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" name="centerID"
+										id="centerID" placeholder="Center ID">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="name" class="col-sm-4 control-label">Name:</label>
+								<div class="col-sm-4">
+									<input type="name" class="form-control" name="name"
+										id="name" placeholder="Name">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-4 col-sm-3">
+									<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+								</div>
+							</div>
+							<div class="form-group">	
+								<div class="col-sm-offset-4 col-sm-3">
+									<button type="reset" class="btn btn-primary" value="Reset">Reset</button>
+								</div>	
+							</div>
+						</form>
+					</div>
+				</div>
+	</div>
+
+	<footer class="text-center">
+		<a class="up-arrow" href="#myPage" data-toggle="tooltip"
+			title="TO TOP"> <span class="glyphicon glyphicon-chevron-up"></span>
+		</a><br> <br>
+		<div class="rows">
+			<div class="col-sm-6">Copyright &copy; 2018, Imphal, Manipur</div>
+			<div class="col-sm-6 text-right">Designed and Developed By TON
+				&amp; BOI-e SOLUTION.</div>
+		</div>
+	</footer>
+</body>
+</html>
