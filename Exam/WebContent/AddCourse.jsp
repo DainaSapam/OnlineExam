@@ -23,10 +23,9 @@
 
 <!-- Custom styles for this template-->
 <link href="./css/sb-admin.css" rel="stylesheet">
-<title>Add Students</title>
+<title>Add Course</title>
 </head>
 <body id="page-top">
-	
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
 		<a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
@@ -141,27 +140,34 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="Dashboard.jsp">Dashboard</a></li>
-					<li class="breadcrumb-item active">Add Students</li>
+					<li class="breadcrumb-item active">Add Course</li>
 				</ol>
 
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa fa-file"></i> Add Students here
+						<i class="fas fa fa-file"></i> Add Course here
 					</div>
 					<div class="card-body">
-						<form action="" id="studentForm" class=" form-horizontal">
+						<form action="" id="courseForm" class=" form-horizontal">
 							<div class="form-group">
-								<label for="aadhar" class="col-sm-4 control-label">Aadhar Number:</label>
+								<label for="course" class="col-sm-4 control-label">Course Name:</label>
 								<div class="col-sm-5">
 									<input type="text" class="form-control required-icon"
-										name="aadhar" id="aadhar" placeholder="Aadhar Number">
+										name="course" id="course" placeholder="Course Name">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="name" class="col-sm-4 control-label">Student Name :</label>
+								<label for="marks" class="col-sm-4 control-label">Total Marks :</label>
 								<div class="col-sm-5">
 									<input type="text" class="form-control required-icon"
-										name="studentName" id="studentName" placeholder="Student Name">
+										name="marks" id="marks" placeholder="Total Marks">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="duration" class="col-sm-4 control-label">Duration :</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control required-icon"
+										name="duration" id="duration" placeholder="Duration">
 								</div>
 							</div>
 							<div class="form-group">
@@ -242,6 +248,6 @@
 	<!-- Demo scripts for this page-->
 	<script src="./javascripts/demo/datatables-demo.js"></script>
 	<script src="js/demo/chart-area-demo.js"></script>
-	
+
 </body>
 </html>

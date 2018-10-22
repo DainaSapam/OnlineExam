@@ -1,5 +1,7 @@
+<%@page import="com.exam.DBConnect.DBConnect"%>
+<%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,10 +25,9 @@
 
 <!-- Custom styles for this template-->
 <link href="./css/sb-admin.css" rel="stylesheet">
-<title>Add Students</title>
+<title>List Questions</title>
 </head>
 <body id="page-top">
-	
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
 		<a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
@@ -93,7 +94,7 @@
 				</div></li>
 		</ul>
 	</nav>
-	
+
 	<div id="wrapper">
 
 		<!-- Sidebar -->
@@ -141,38 +142,63 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="Dashboard.jsp">Dashboard</a></li>
-					<li class="breadcrumb-item active">Add Students</li>
+					<li class="breadcrumb-item active">List Course</li>
 				</ol>
 
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa fa-file"></i> Add Students here
+						<i class="fas fa fa-file"></i> List Courses Here
 					</div>
+
 					<div class="card-body">
-						<form action="" id="studentForm" class=" form-horizontal">
-							<div class="form-group">
-								<label for="aadhar" class="col-sm-4 control-label">Aadhar Number:</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control required-icon"
-										name="aadhar" id="aadhar" placeholder="Aadhar Number">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="name" class="col-sm-4 control-label">Student Name :</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control required-icon"
-										name="studentName" id="studentName" placeholder="Student Name">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-4 col-sm-3">
-									<button type="submit" class="btn btn-primary" id="save"
-										value="Submit">Save</button>
-									<button type="reset" class="btn btn-primary" value="Reset">Reset</button>
-								</div>
-							</div>
-						</form>
-						<div id="message"></div>
+						<div class="table-responsive">
+							<table class="table table-bordered" id="dataTable" width="100%"
+								cellspacing="0">
+								<thead>
+									<tr>
+										<th>Course Name</th>
+										<th>Total Marks</th>
+										<th>Duration (in hours)</th>
+									</tr>
+								</thead>
+								<%
+									Connection con = null;
+
+									String query = "Select * from Course";
+
+									try {
+										con = DBConnect.getConnection();
+										PreparedStatement ps = con.prepareStatement(query);
+										System.out.println(ps);
+										ResultSet rs = ps.executeQuery();
+
+										while (rs.next()) {
+								%>
+								<tbody>
+									<tr>
+										<td><%=rs.getString("courseName")%></td>
+										<td><%=rs.getString("totalMarks")%></td>
+										<td><%=rs.getString("time")%></td>
+									</tr>
+								</tbody>
+								<%
+									}
+									} catch (SQLException e) {
+										System.out.println(e.getMessage());
+									} finally {
+										if (con != null) {
+											try {
+												con.close();
+											} catch (SQLException e) {
+												e.printStackTrace();
+											}
+										}
+									}
+								%>
+							</table>
+
+						</div>
+
 					</div>
 				</div>
 
@@ -242,6 +268,5 @@
 	<!-- Demo scripts for this page-->
 	<script src="./javascripts/demo/datatables-demo.js"></script>
 	<script src="js/demo/chart-area-demo.js"></script>
-	
 </body>
 </html>

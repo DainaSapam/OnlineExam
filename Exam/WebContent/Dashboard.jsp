@@ -129,8 +129,8 @@
 			<li class="nav-item"><a class="nav-link" href="AddStudent.jsp">
 					<i class="fas fa-fw fa fa-file"></i> <span>Add Students</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="ListQuestions.jsp">
-					<i class="fas fa-fw fa fa-file"></i> <span>List Questions</span>
+			<li class="nav-item"><a class="nav-link" href="AddCourse.jsp">
+					<i class="fas fa-fw fa fa-file"></i> <span>Add Course</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="tables.html">
 					<i class="fas fa-fw fa-table"></i> <span>Tables</span>
@@ -155,9 +155,9 @@
 								<div class="card-body-icon">
 									<i class="fas fa-fw fa-comments"></i>
 								</div>
-								<div class="mr-5">26 New Messages!</div>
+								<div class="mr-5">2 Courses!</div>
 							</div>
-							<a class="card-footer text-white clearfix small z-1" href="#">
+							<a class="card-footer text-white clearfix small z-1" href="course.jsp">
 								<span class="float-left">View Details</span> <span
 								class="float-right"> <i class="fas fa-angle-right"></i>
 							</span>
@@ -170,9 +170,9 @@
 								<div class="card-body-icon">
 									<i class="fas fa-fw fa-list"></i>
 								</div>
-								<div class="mr-5">11 New Tasks!</div>
+								<div class="mr-5">100 Questions!</div>
 							</div>
-							<a class="card-footer text-white clearfix small z-1" href="#">
+							<a class="card-footer text-white clearfix small z-1" href="ListQuestions.jsp">
 								<span class="float-left">View Details</span> <span
 								class="float-right"> <i class="fas fa-angle-right"></i>
 							</span>
@@ -185,7 +185,7 @@
 								<div class="card-body-icon">
 									<i class="fas fa-fw fa-shopping-cart"></i>
 								</div>
-								<div class="mr-5">123 New Orders!</div>
+								<div class="mr-5">123 Exam Results!</div>
 							</div>
 							<a class="card-footer text-white clearfix small z-1" href="#">
 								<span class="float-left">View Details</span> <span
@@ -200,7 +200,7 @@
 								<div class="card-body-icon">
 									<i class="fas fa-fw fa-life-ring"></i>
 								</div>
-								<div class="mr-5">13 New Tickets!</div>
+								<div class="mr-5">13 Upcoming Exams!</div>
 							</div>
 							<a class="card-footer text-white clearfix small z-1" href="#">
 								<span class="float-left">View Details</span> <span

@@ -128,8 +128,8 @@
 			<li class="nav-item"><a class="nav-link" href="AddStudent.jsp">
 					<i class="fas fa-fw fa fa-file"></i> <span>Add Students</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="ListQuestions.jsp">
-					<i class="fas fa-fw fa fa-file"></i> <span>List Questions</span>
+			<li class="nav-item"><a class="nav-link" href="AddCourse.jsp">
+					<i class="fas fa-fw fa fa-file"></i> <span>Add Course</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="tables.html">
 					<i class="fas fa-fw fa-table"></i> <span>Tables</span>
@@ -154,8 +154,7 @@
 							<div class="form-group">
 								<label for="question" class="col-sm-4 control-label">Question:</label>
 								<div class="col-sm-5">
-									<input type="text" class="form-control required-icon"
-										name="question" id="question" placeholder="Question">
+									<textarea rows="5" cols="5" class="form-control required-icon" name="question" id="question" placeholder="Type your question here"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
