@@ -1,3 +1,5 @@
+<%@page import="com.exam.DBConnect.DBConnect"%>
+<%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -23,10 +25,9 @@
 
 <!-- Custom styles for this template-->
 <link href="./css/sb-admin.css" rel="stylesheet">
-<title>Add Question</title>
+<title>List Questions</title>
 </head>
 <body id="page-top">
-
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
 		<a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
@@ -92,7 +93,6 @@
 						data-target="#logoutModal">Logout</a>
 				</div></li>
 		</ul>
-
 	</nav>
 
 	<div id="wrapper">
@@ -128,8 +128,9 @@
 			<li class="nav-item"><a class="nav-link" href="AddStudent.jsp">
 					<i class="fas fa-fw fa fa-file"></i> <span>Add Students</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="ListQuestions.jsp">
-					<i class="fas fa-fw fa fa-file"></i> <span>List Questions</span>
+			<li class="nav-item"><a class="nav-link"
+				href="ListQuestions.jsp"> <i class="fas fa-fw fa fa-file"></i> <span>List
+						Questions</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="tables.html">
 					<i class="fas fa-fw fa-table"></i> <span>Tables</span>
@@ -142,72 +143,53 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="Dashboard.jsp">Dashboard</a></li>
-					<li class="breadcrumb-item active">Add Questions</li>
+					<li class="breadcrumb-item active">List Questions</li>
 				</ol>
 
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa fa-file"></i> Add Questions here
+						<i class="fas fa fa-file"></i> List Questions
 					</div>
+					<%
+						Connection con = null;
+
+						String query = "Select * from questions";
+
+						try {
+							con = DBConnect.getConnection();
+							PreparedStatement ps = con.prepareStatement(query);
+							System.out.println(ps);
+							ResultSet rs = ps.executeQuery();
+							int i = 1;
+
+							while (rs.next()) {
+					%>
+
 					<div class="card-body">
-						<form action="" id="questionForm" class=" form-horizontal">
-							<div class="form-group">
-								<label for="question" class="col-sm-4 control-label">Question:</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control required-icon"
-										name="question" id="question" placeholder="Question">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="opt1" class="col-sm-4 control-label">Option
-									1:</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control required-icon"
-										name="opt1" id="opt1" placeholder="option 1">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="opt2" class="col-sm-4 control-label">Option
-									2:</label>
-								<div class="col-sm-5">
-									<input type="text" class="form-control required-icon"
-										name="opt2" id="opt2" placeholder="option 2">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="opt3" class="col-sm-4 control-label">Option
-									3:</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control required-icon"
-										name="opt3" id="opt3" placeholder="option 3">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="opt4" class="col-sm-4 control-label">Option
-									4:</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control required-icon"
-										name="opt4" id="opt4" placeholder="option 4">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="answer" class="col-sm-4 control-label">Correct
-									Answer:</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control required-icon"
-										name="answer" id="answer" placeholder="correct answer">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-4 col-sm-3">
-									<button type="submit" class="btn btn-primary" id="save"
-										value="Submit">Save</button>
-									<button type="reset" class="btn btn-primary" value="Reset">Reset</button>
-								</div>
-							</div>
-						</form>
-						<div id="message"></div>
+						<b>Q<%=i%>.&nbsp;<%=rs.getString("question")%></b><br>
+						<ol>
+							<li><%=rs.getString("opt1")%></li>
+							<li><%=rs.getString("opt1")%></li>
+							<li><%=rs.getString("opt1")%></li>
+							<li><%=rs.getString("opt1")%></li>
+						</ol>
+						<br> Correct Answer: <b><%=rs.getString("correctAnswer")%></b>
 					</div>
+					<%
+						i++;
+							}
+						} catch (SQLException e) {
+							System.out.println(e.getMessage());
+						} finally {
+							if (con != null) {
+								try {
+									con.close();
+								} catch (SQLException e) {
+									e.printStackTrace();
+								}
+							}
+						}
+					%>
 				</div>
 
 
@@ -271,7 +253,7 @@
 
 	<!-- Custom scripts for all pages-->
 	<script src="./javascripts/sb-admin.js"></script>
-	<script src="./javascripts/question.js"></script>
+	<script src="./javascripts/student.js"></script>
 
 	<!-- Demo scripts for this page-->
 	<script src="./javascripts/demo/datatables-demo.js"></script>
