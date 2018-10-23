@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	$('#questionForm').submit(function(e){
 		
-		alert("Hi");
+		/*alert("Hi");*/
 		
 		var question = $("#question").val();
 		var opt1 = $("#opt1").val();
