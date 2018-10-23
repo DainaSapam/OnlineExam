@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,10 +23,10 @@
 
 <!-- Custom styles for this template-->
 <link href="./css/sb-admin.css" rel="stylesheet">
-<title>Add Question</title>
+<title>Add Students</title>
 </head>
 <body id="page-top">
-
+	
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
 		<a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
@@ -92,9 +92,8 @@
 						data-target="#logoutModal">Logout</a>
 				</div></li>
 		</ul>
-
 	</nav>
-
+	
 	<div id="wrapper">
 
 		<!-- Sidebar -->
@@ -142,59 +141,27 @@
 				<!-- Breadcrumbs-->
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="Dashboard.jsp">Dashboard</a></li>
-					<li class="breadcrumb-item active">Add Questions</li>
+					<li class="breadcrumb-item active">Add Students</li>
 				</ol>
 
 				<div class="card mb-3">
 					<div class="card-header">
-						<i class="fas fa fa-file"></i> Add Questions here
+						<i class="fas fa fa-file"></i> Add Students here
 					</div>
 					<div class="card-body">
-						<form action="" id="questionForm" class=" form-horizontal">
+						<form action="" id="studentForm" class=" form-horizontal">
 							<div class="form-group">
-								<label for="question" class="col-sm-4 control-label">Question:</label>
-								<div class="col-sm-5">
-									<textarea rows="5" cols="5" class="form-control required-icon" name="question" id="question" placeholder="Type your question here"></textarea>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="opt1" class="col-sm-4 control-label">Option
-									1:</label>
+								<label for="aadhar" class="col-sm-4 control-label">Aadhar Number:</label>
 								<div class="col-sm-5">
 									<input type="text" class="form-control required-icon"
-										name="opt1" id="opt1" placeholder="option 1">
+										name="aadhar" id="aadhar" placeholder="Aadhar Number">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="opt2" class="col-sm-4 control-label">Option
-									2:</label>
+								<label for="name" class="col-sm-4 control-label">Student Name :</label>
 								<div class="col-sm-5">
 									<input type="text" class="form-control required-icon"
-										name="opt2" id="opt2" placeholder="option 2">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="opt3" class="col-sm-4 control-label">Option
-									3:</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control required-icon"
-										name="opt3" id="opt3" placeholder="option 3">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="opt4" class="col-sm-4 control-label">Option
-									4:</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control required-icon"
-										name="opt4" id="opt4" placeholder="option 4">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="answer" class="col-sm-4 control-label">Correct
-									Answer:</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control required-icon"
-										name="answer" id="answer" placeholder="correct answer">
+										name="studentName" id="studentName" placeholder="Student Name">
 								</div>
 							</div>
 							<div class="form-group">
@@ -270,10 +237,11 @@
 
 	<!-- Custom scripts for all pages-->
 	<script src="./javascripts/sb-admin.js"></script>
-	<script src="./javascripts/question.js"></script>
+	<script src="./javascripts/student.js"></script>
 
 	<!-- Demo scripts for this page-->
 	<script src="./javascripts/demo/datatables-demo.js"></script>
 	<script src="js/demo/chart-area-demo.js"></script>
+	
 </body>
 </html>
