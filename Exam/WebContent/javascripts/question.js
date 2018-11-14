@@ -2,6 +2,11 @@ $(document).ready(function(){
 	
 	$('#questionForm').submit(function(e){
 		
+<<<<<<< HEAD
+		/*alert("Hi");*/
+		
+=======
+>>>>>>> 5a377ab73281240ec6820db1d1852fedb50e3d6d
 		var question = $("#question").val();
 		var opt1 = $("#opt1").val();
 		var opt2 = $("#opt2").val();
