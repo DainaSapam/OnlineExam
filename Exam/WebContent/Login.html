@@ -17,8 +17,6 @@
 </script>
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
 <title>Login</title>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar"
@@ -61,46 +59,47 @@
 				change them before the final submission.</li>
 			<li>Your score sheet will be availabe instantly after you submit
 				the test.</li>
-			<li>Please fill up your <b>CenterID</b> and your <b>Name</b> to
-				start the test.
+			<li>Please fill up your <b>Aadhar Number</b> and your <b>Name</b>
+				to start the test.
 			</li>
-			<li>Your test will start instantly after your click <b>SUBMIT</b>
+			<li>Your test will start instantly after your click <b>LOGIN</b>
 				button.
 			</li>
 		</ul>
 		<div class="panel panel-default">
-					<div class="panel-body">
-						<form id="examForm" method="post" class=" form-inline"
-							action="#">
-							<div class="form-group">
-								<label for="centerID" class="col-sm-4 control-label">Center ID:</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control" name="centerID"
-										id="centerID" placeholder="Center ID">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="name" class="col-sm-4 control-label">Name:</label>
-								<div class="col-sm-4">
-									<input type="name" class="form-control" name="name"
-										id="name" placeholder="Name">
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-4 col-sm-3">
-									<button type="submit" class="btn btn-primary" value="Submit">Submit</button>
-								</div>
-							</div>
-							<div class="form-group">	
-								<div class="col-sm-offset-4 col-sm-3">
-									<button type="reset" class="btn btn-primary" value="Reset">Reset</button>
-								</div>	
-							</div>
-						</form>
+			<div class="panel-body">
+				<form id="examForm" method="post" class=" form-inline" action="./StudentLogin" >
+					<div class="form-group">
+						<label for="aadhar" class="col-sm-5 control-label">Aadhar
+							Number:</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="aadhar" id="aadhar"
+								placeholder="Aadhar Number">
+						</div>
 					</div>
-				</div>
+					<div class="form-group">
+						<label for="name" class="col-sm-5 control-label">Name:</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="name" id="name"
+								placeholder="Name">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-3">
+							<button type="submit" class="btn btn-primary" value="Submit">Login</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-3">
+							<button type="reset" class="btn btn-primary" value="Reset">Reset</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="message"></div>
+		</div>
 	</div>
-
+	<!-- <script src="./javascripts/studentLogin.js"></script> -->
 	<footer class="text-center">
 		<a class="up-arrow" href="#myPage" data-toggle="tooltip"
 			title="TO TOP"> <span class="glyphicon glyphicon-chevron-up"></span>

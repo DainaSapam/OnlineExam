@@ -165,6 +165,20 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<label for="batch" class="col-sm-4 control-label">Batch :</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control required-icon"
+										name="batch" id="batch" placeholder="Batch">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="course" class="col-sm-4 control-label">Course ID:</label>
+								<div class="col-sm-5">
+									<input type="text" class="form-control required-icon"
+										name="course" id="course" placeholder="Course">
+								</div>
+							</div>
+							<div class="form-group">
 								<div class="col-sm-offset-4 col-sm-3">
 									<button type="submit" class="btn btn-primary" id="save"
 										value="Submit">Save</button>

@@ -2,7 +2,10 @@ package com.exam.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.json.simple.JSONObject;
 
 import com.exam.DBConnect.DBConnect;
 
@@ -29,7 +32,7 @@ public class QuestionsDAO {
 			ps.execute();
 			flag = true;
 			
-		}catch(Exception e){
+		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
 			if(con != null){
@@ -41,6 +44,89 @@ public class QuestionsDAO {
 			}
 		}
 		return flag;
+	}
+	
+	public static String getQuestion(String questionNo){
+		
+		String query = "select * from questions order by random() limit 1";
+		
+		Connection con = null;
+		
+		JSONObject obj = new JSONObject();
+		
+		try{
+			con = DBConnect.getConnection();
+			
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs=ps.executeQuery();
+			if(rs.next()){
+				obj.put("qNo",questionNo);
+				obj.put("qID",rs.getInt("question_id"));
+				obj.put("question",rs.getString("question"));
+				obj.put("opt1",rs.getString("opt1"));
+				obj.put("opt2",rs.getString("opt2"));
+				obj.put("opt3",rs.getString("opt3"));
+				obj.put("opt4",rs.getString("opt4"));
+				obj.put("answer",rs.getString("correctAnswer"));
+			}
+			
+			ps.close();
+			rs.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			if(con != null){
+				try{
+					con.close();
+				}catch(SQLException e){
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return obj.toString();
+	}
+	
+	public static String getPreviousQuestion(String questionID){
+		
+		System.out.println(questionID);
+		String query = "select * from questions where question_id="+questionID;
+		
+		Connection con = null;
+		
+		JSONObject obj = new JSONObject();
+		
+		try{
+			con = DBConnect.getConnection();
+			System.out.println(query);
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs=ps.executeQuery();
+			if(rs.next()){
+				obj.put("qId",questionID);
+				obj.put("question",rs.getString("question"));
+				obj.put("opt1",rs.getString("opt1"));
+				obj.put("opt2",rs.getString("opt2"));
+				obj.put("opt3",rs.getString("opt3"));
+				obj.put("opt4",rs.getString("opt4"));
+				obj.put("answer",rs.getString("correctAnswer"));
+			}
+			
+			ps.close();
+			rs.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			if(con != null){
+				try{
+					con.close();
+				}catch(SQLException e){
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return obj.toString();
+		
 	}
 
 }

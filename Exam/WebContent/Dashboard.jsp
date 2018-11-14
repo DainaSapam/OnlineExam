@@ -27,6 +27,16 @@
 <title>Admin - Dashboard</title>
 </head>
 <body id="page-top">
+	
+	<%
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");//HTTP 1.1
+		response.setHeader("Pragma", "no-cache"); //HTTP 1.0
+		response.setHeader("Expires", "0"); //Proxies
+		
+		if(session.getAttribute("user") == null){
+			response.sendRedirect("AdminLogin.html");
+		}
+	%>
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
@@ -37,6 +47,8 @@
 			<i class="fas fa-bars"></i>
 		</button>
 
+		<span style="text-transform: capitalize" class="navbar-brand mr-1" >Welcome <%=session.getAttribute("user") %></span>
+		
 		<!-- Navbar Search -->
 		<form
 			class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">

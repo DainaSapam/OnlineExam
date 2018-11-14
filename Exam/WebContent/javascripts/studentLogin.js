@@ -68,15 +68,10 @@
 	    return (c === 0);
 	}
 
-
-$(document).ready(function(){
-	
-	$('#studentForm').submit(function(e){
+$('#examForm').submit(function(e){
 		
 		var aadhar = $("#aadhar").val();
-		var name = $("#studentName").val();
-		var batch = $("#batch").val();
-		var course = $("course").val();
+		var name = $("#name").val();
 		
 		if(aadhar.length == 0){
 			$("#aadhar").after('<span class="text-danger">Please Enter the Aadhar Number.</span>');
@@ -97,52 +92,38 @@ $(document).ready(function(){
 		validate(aadhar);
 		
 		if(name.length == ""){
-			$("#studentName").after('<span class="text-danger ">Please Enter Student Name.</span>');
-			$("#studentName").focus();
+			$("#name").after('<span class="text-danger ">Please Enter Your Name.</span>');
+			$("#name").focus();
 			e.preventDefault();
 		
 		}
-		if(batch.length == ""){
-			$("#batch").after('<span class="text-danger ">Please Enter Batch Number.</span>');
-			$("#batch").focus();
-			e.preventDefault();
-		
-		}
-		if(course.length == ""){
-			$("#course").after('<span class="text-danger ">Please Enter Course ID.</span>');
-			$("#course").focus();
-			e.preventDefault();
-		
-		}
-		
-		
 		
 		var inputJSON = null;
-		console.log("aadhar: "+aadhar+"\n Student Name: "+name+"\n batch: "+batch+"\n CourseID: "+course);
+		console.log("aadhar: "+aadhar+"\n Student Name: "+name);
 		e.preventDefault();
-		if((aadhar.length != 0) && (studentName.length != 0) && (batch.length != 0) && (course.length != 0)){
-			inputJSON = {aadhar: aadhar, name: name,batch: batch, course: course};
+		if((aadhar.length != 0) && (name.length != 0)){
+			inputJSON = {aadhar: aadhar, name: name};
 		}
 		
-		$.ajax({
+		/*$.ajax({
 			cache: 'false',
-			url: "./Student",
-			type: 'GET',			
+			url: "/StudentLogin",
+			type: 'POST',			
 			data: inputJSON,			
 			success: function(data, xhr){
 				
 				$('#message').html('<div class="alert-success text-center">'
-						+'Student successfully inserted into the database</div>');
+						+'Exam successfully started</div>');
 				$('#message').fadeOut(2000);
-				$("#studentForm").each(function(){
+				$("#examForm").each(function(){
 					this.reset();
 				});
 			},
 			error : function(xhr) {
 				$('#message').html('<div class="alert-danger text-center">'
-						+'Unable to insert the student </div>');
+						+'Unable to Login </div>');
 				$('#message').fadeOut(2000);
-				$("#studentForm").each(function(){
+				$("#examForm").each(function(){
 					this.reset();
 				});
 				console.log("error");
@@ -150,6 +131,5 @@ $(document).ready(function(){
 			complete : function(data){
 				console.log("complete");
 			}
-		});
+		});*/
 	});
-});

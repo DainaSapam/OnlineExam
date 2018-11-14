@@ -4,6 +4,8 @@ public class Students {
 
 	String aadharNumber;
 	String studentName;
+	String batch;
+	int courseID;
 
 	public String getAadharNumber() {
 		return aadharNumber;
@@ -19,6 +21,22 @@ public class Students {
 
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
+	}
+
+	public String getBatch() {
+		return batch;
+	}
+
+	public void setBatch(String batch) {
+		this.batch = batch;
+	}
+
+	public int getCourseID() {
+		return courseID;
+	}
+
+	public void setCourseID(int courseID) {
+		this.courseID = courseID;
 	}
 
 }

@@ -25,13 +25,19 @@ public class Student extends HttpServlet {
 
 		String aadhar = request.getParameter("aadhar");
 		String name = request.getParameter("name");
+		String batch = request.getParameter("batch");
+		String courseID = request.getParameter("course");
 		
 		System.out.println("Student servlet");
 		
 		System.out.println("Aadhar Number: "+aadhar);
 		System.out.println("Name: "+name);
+		System.out.println("Batch: "+batch);
+		System.out.println("Course ID: "+courseID);
 		
-		if(StudentDAO.insertStudents(aadhar, name)){
+		int cID = Integer.parseInt(courseID);
+		
+		if(StudentDAO.insertStudents(aadhar, name, batch, cID)){
 			System.out.println("Students successfully inserted into the database");
 			response.sendRedirect("AddStudent.jsp");
 		}else{
